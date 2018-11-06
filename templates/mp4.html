@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video.js | HTML5 Video Player</title>
+
+  <!-- Chang URLs to wherever Video.js files will be hosted -->
+  <link href="/static/mp4/video-js.css" rel="stylesheet" type="text/css">
+  <!-- video.js must be in the <head> for older IEs to work. -->
+  <script src="/static/mp4/video.js"></script>
+
+  <!-- Unless using the CDN hosted version, update the URL to the Flash SWF -->
+  <script>
+{#    videojs.options.flash.swf = ctx +"/static/mp4/video-js.swf";#}
+       videojs.options.flash.mp4 = "/static/mp4/htg.mp4";
+  </script>
+
+
+</head>
+<body>
+
+<video id="videoPlayer" class="video-js vjs-default-skin vjs-big-play-centered vjs-site" controls preload="none" width="100%" height="400" data-setup="{}">
+  <source src="http://115.28.46.150:8081/OW3.0/video/16b4312e-bc03-40c2-a57c-277c0905e981.mp4" type="video/mp4" />
+</video>
+
+<script>
+    videojs('videoPlayer');
+</script>
+</body>
+</html>

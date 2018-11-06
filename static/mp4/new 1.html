@@ -1,0 +1,22 @@
+<html> <head> ... <!-- 引入video.js的样式文件 --> <link rel="stylesheet" type="text/css" href="css/video-js.css" /> ... <!-- 如果没有使用Modernizr，则使用以下代码做shiv --> <script type="text/javascript">
+	document.createElement('video');document.createElement('audio');document.createElement('track');
+</script> ... <!-- 引入video.js的脚本文件 --> <script src="js/video.js" type="text/javascript" charset="utf-8"></script> <!-- 指定videojs的flash文件 --> <script type="text/javascript">
+	videojs.options.flash.swf = "js/video-js.swf";
+</script> ... </head> <body> ... <video id="sample_video" preload="none"  class="video-js vjs-default-skin vjs-big-play-centered" data-setup='{ "controls": true, "autoplay": false, "preload": "none", "poster": "images/sample_video_poster.png", "width": 852, "height": 480 }'>                     <source src="videos/sample_video.mp4" type='video/mp4' />                                          <!-- 如果浏览器不兼容HTML5则使用flash播放 -->                     <object id="sample_video" class="vjs-flash-fallback" width="852"
+                        height="480" type="application/x-shockwave-flash"
+                        data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">                         <param name="movie"
+                            value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />                         <param name="allowfullscreen" value="true" />                         <param name="flashvars" value='config={"playlist":["images/sample_video_poster.png", {"url": "videos/sample_video.mp4","autoPlay":false,"autoBuffering":true}]}' />                         <!-- 视频图片. -->                         <img src="images/sample_video.png" width="852"
+                            height="480" alt="Poster Image"
+                            title="No video playback capabilities." />                     </object>                 </video> ... <script type="text/javascript">
+var myPlayer = null;
+$(document).ready(function() {
+...
+    if(!myPlayer) {
+        // Using the video's ID or element
+        myPlayer = videojs("video_center_video");
+    }
+    // After you have references to your players you can...(example)
+    myPlayer.play(); // Starts playing the video for this player.
+...
+});
+</script> </body> </html>

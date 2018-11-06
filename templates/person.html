@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <link href= 'static/person/css/base.css'  rel="stylesheet">
+       <link href="static/person/css/index.css" rel="stylesheet">
+       <script type="text/javascript" src="static/person/js/jquery.minx.js"></script>
+       <script type="text/javascript" src="static/person/js/sliders.js"></script>
+        <title>基于Django的个人blog系统设计</title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+        <meta name="description" content="FlexyCodes - FlexyCard vCard Template. Creating my personal page!"/>
+
+        <!-- CSS | bootstrap -->
+        <!-- Credits: http://getbootstrap.com/ -->
+        <link  rel="stylesheet" type="text/css" href="/static/person/css/bootstrap.min.css" />
+
+        <!-- CSS | font-awesome -->
+        <!-- Credits: http://fortawesome.github.io/Font-Awesome/icons/ -->
+        <link rel="stylesheet" type="text/css" href="/static/person/css/font-awesome.min.css" />
+
+        <!-- CSS | Colors -->
+        <link rel="stylesheet" type="text/css" href="/static/person/css/colors/DarkBlue.css" id="colors-style" />
+{#        测#}
+        <link rel="stylesheet" type="text/css" href="/static/person/css/switcher.css" />
+
+        <!-- CSS | animate -->
+        <!-- Credits: http://daneden.github.io/animate.css/ -->
+        <link rel="stylesheet" type="text/css" href="/static/person/css/animate.min.css" />
+
+        <!-- CSS | Normalize -->
+        <!-- Credits: http://manos.malihu.gr/jquery-custom-content-scroller -->
+        <link rel="stylesheet" type="text/css" href="/static/person/css/jquery.mCustomScrollbar.css" />
+
+
+        <!-- CSS | Style -->
+        <!-- Credits: http://themeforest.net/user/FlexyCodes -->
+        <link rel="stylesheet" type="text/css" href="/static/person/css/main.css" />
+
+        <!-- CSS | prettyPhoto -->
+        <!-- Credits: http://www.no-margin-for-errors.com/ -->
+        <link rel="stylesheet" type="text/css" href="static/person/css/prettyPhoto.css"/>
+
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="static/person/images/favicon/favicon.ico">
+
+        <!--[if IE 7]>
+                <link rel="stylesheet" type="text/css" href="static/person/css/icons/font-awesome-ie7.min.css"/>
+        <![endif]-->
+
+        <style>
+
+            @media only screen and (max-width : 991px){
+                .resp-vtabs .resp-tabs-container {
+                    margin-left: 0px !important;
+                }
+                .resp-vtabs ul.resp-tabs-list {
+                    width: 10%;
+                    margin-right: 2px !important;
+                }
+            }
+
+            @media only screen and (max-width : 800px){
+
+                .widget-profil {
+                    float: none !important;
+                }
+            }
+
+            .widget-profil {
+                float: left;
+            }
+
+            .resp-vtabs ul.resp-tabs-list {
+                float: right;
+            }
+
+
+        </style>
+
+
+    </head>
+
+    <body>
+
+        <!--[if lt IE 7]>
+                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Laoding page -->
+        <div id="preloader"><div id="spinner"></div></div>
+
+
+        <!-- .slideshow -->
+        <ul class="cb-slideshow" id="cb_slideshow" style="display:none">
+            <li><span>Image 01</span><div></div></li>
+            <li><span>Image 02</span><div></div></li>
+            <li><span>Image 03</span><div></div></li>
+            <li><span>Image 04</span><div></div></li>
+            <li><span>Image 05</span><div></div></li>
+            <li><span>Image 06</span><div></div></li>
+        </ul> 
+        <!-- /.slideshow --> 
+
+        <!-- .wrapper --> 
+        <div class="wrapper">
+
+            <!--- .Content --> 
+            <section class="tab-content">
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-md-12">
+
+                            <div class="row">   
+
+                                <div class="col-md-3 widget-profil">
+
+                                    <div class="row">
+
+    <!-- Profile Image -->
+    <div class="col-lg-12 col-md-12 col-sm-3 col-xs-12 ">
+    	 
+		 
+                                
+         <div class="image-holder one" id="pic_prof_1" style="display:block">
+              {% for i in family%}
+        
+                <img class="head-image up circle" src="{{ i.img.url}}" width="150" height="150" alt="" />
+                <!--<img class="head-image up-left circle" src="images/img/upleft.png" width="150" height="150" alt="" />
+                <img class="head-image left circle" src="images/img/left.png" width="150" height="150" alt="" />
+                <img class="head-image down-left circle" src="images/img/downleft.png" width="150" height="150" alt="" />
+                <img class="head-image down circle" src="images/img/down.png" width="150" height="150" alt="" />
+                <img class="head-image down-right circle" src="images/img/downright.png" width="150" height="150" alt="" />
+                <img class="head-image right circle" src="images/img/right.png" width="150" height="150" alt="" />
+                <img class="head-image up-right circle" src="images/img/upright.png" width="150" height="150" alt="" />
+                <img class="head-image front circle" src="images/img/front.png" width="150" height="150" alt="" />
+             -->
+             {% endfor %}
+        </div>
+        
+        <!-- style for simple image profile -->		
+   		<div class="circle-img" id="pic_prof_2" style="display:none"></div>
+       
+    
+    </div>
+    <!-- End Profile Image -->
+  
+    <div class="col-lg-12 col-md-12 col-sm-9 col-xs-12">
+
+    
+        <!-- Profile info -->
+        <div id="profile_info">
+{% for i in persion %}
+
+            <h1 id="name" class="transition-02">{{ i.name }}</h1>
+            <h4 class="line">{{ i.job }}</h4>
+            <h6><span class="fa fa-map-marker"></span> {{ i.address }}</h>
+
+
+        </div>
+        <!-- End Profile info -->  
+    	
+        Style Selector
+        <!-- Profile Description -->
+        <div id="profile_desc">
+            <p>
+            {{ i.intrudec }}
+
+            </p>
+{%  endfor %}
+        </div>
+        <!-- End Profile Description -->  
+    	
+        
+        <!-- 用户 -->
+         <div id="profile_social">
+            <h6>My Social Profiles</h6>
+            <a href="http://qzone.qq.com/"><i class="fa fa-qq"></i></a>
+            <a href="https://wx.qq.com/"><i class="fa fa-weixin"></i></a>
+             <a href="https://github.com/yubenliu99"><i class="fa fa-github"></i></a>
+            <a href="#"><i class="fa fa-weibo"></i></a>
+            <div class="clear"></div>
+        </div>
+        <!-- End Name -->  
+      
+    
+    
+    </div>
+  
+</div>
+                                </div>
+
+                                <div class="col-md-9 flexy_content" style="padding-left: 0;padding-right: 0;">
+
+                                    <!-- verticalTab menu -->
+                                    <div id="verticalTab">
+                                    <!--分类栏按钮 -->
+                                        <ul class="resp-tabs-list">
+                                            <span class="tite-list">portfolio</span>
+                                            <a href="/" id="downlowd"><i class="fa fa-home icon_print"></i> </a>
+                                             <a href="/blog" id="downlowd"><i class="fa fa-rss icon_print"></i> </a>
+                                           
+                                            <li class="tabs-portfolio hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a" data-tab-name="portfolio"> 
+                                                <span class="tite-list">portfolio</span>
+                                                <i class="fa fa-user icon_menu"></i>
+                                            </li>
+
+                                            <li class="tabs-blog hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a" data-tab-name="blog">
+                                                <span class="tite-list">blog</span>
+                                                <i class=" fa fa-picture-o icon_menu"></i>
+                                            </li>
+
+                                            <li class="tabs-contact hi-icon-wrap hi-icon-effect-5 hi-icon-effect-5a" data-tab-name="contact" style="margin-bottom: 48px !important;"> 
+                                                <span class="tite-list">contact</span>
+                                                <i class="fa fa-envelope icon_menu"></i> 
+                                            </li>
+
+
+                                        </ul>
+                                        <!-- /resp-tabs-list -->
+
+
+
+                                        <!-- resp-tabs-container --> 
+                                        <div class="resp-tabs-container">
+                                          
+                                            <!-- profile -->
+                                            <div id="profile" class="content_2">
+                                                <!-- .title -->
+
+<h1 class="h-bloc">个人基本信息介绍</h1>
+
+<div class="row">
+
+   <!-- .resume-right -->
+    <div class="col-md-6">
+
+        <!-- .title_content -->
+        <div class="title_content" style="float: none;">
+            <div class="text_content">操作系统熟练度</div>
+            <div class="clear"></div>
+        </div>
+        <!-- /.title_content -->
+        
+        <div class="skills">
+         {% for i in kills_system %}
+            <!-- .skillbar -->
+            <div class="skillbar clearfix" data-percent="{{i.proficiency}}%">
+                <div class="skillbar-title" style="width:{{i.proficiency}}%"><span>{{ i.name }}</span></div>
+                <div class="skillbar-bar"></div>
+                <div class="skill-bar-percent">{{ i.proficiency }}%</div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <!-- .title_content -->
+        <div class="title_content" style="float: none;">
+            <div class="text_content">计算机语言技能</div>
+            <div class="clear"></div>
+        </div>
+        <!-- /.title_content -->
+        
+        <div class="skills">
+            {% for i in kills_program %}
+            <!-- .skillbar -->
+            <div class="skillbar clearfix" data-percent="{{ i.proficiency}}%">
+                <div class="skillbar-title" style="width:{{i.proficiency}}%"><span>{{ i.name }}</span></div>
+                <div class="skillbar-bar"></div>
+                <div class="skill-bar-percent">{{ i.proficiency }}%</div>
+            </div>
+            {% endfor %}
+            <!-- /.skillbar -->
+
+        </div>
+        
+         
+        <!-- .title_content -->
+        <div class="title_content" style="float: none;">
+            <div class="text_content">Office 技能</div>
+            <div class="clear"></div>
+        </div>
+        <!-- /.title_content -->
+            
+        <div class="skills">
+          {%  for i in kills_offic %}
+            <!-- .skillbar -->
+
+            <div class="skillbar clearfix" data-percent="{{i.proficiency }}%">
+                <div class="skillbar-title" style="width:{{i.proficiency}}%"><span>{{ i.name }}</span></div>
+                <div class="skillbar-bar"></div>
+                <div class="skill-bar-percent">{{ i.proficiency}}%</div>
+            </div>
+
+               {% endfor %}
+        </div>
+        <!-- .title_content -->
+        <div class="title_content" style="float: none;">
+            <div class="text_content">业余爱好 </div>
+            <div class="clear"></div>
+        </div>
+        <!-- /.title_content -->
+        
+        <div class="skills">
+            <!-- .skillbar -->
+            {% for i  in  kills_hobbies %}
+            <div class="skillbar clearfix" data-percent="{{ i.proficiency }}%">
+                <div class="skillbar-title" style="width:{{i.proficiency}}%"><span>{{ i.name }}</span></div>
+                <div class="skillbar-bar"></div>
+                <div class="skill-bar-percent">{{ i.proficiency }}%</div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- .title_content -->
+        <div class="title_content" style="float: none;">
+            <div class="text_content">世界语言</div>
+            <div class="clear"></div>
+        </div>
+        <!-- /.title_content -->
+        
+        <div class="skills">
+         {% for i in kills_lange %}
+            <!-- .skillbar -->
+            <div class="skillbar clearfix" data-percent="{{ i.proficiency }}%">
+                <div class="skillbar-title" style="width:{{i.proficiency}}%"><span>{{ i.name}}</span></div>
+                <div class="skillbar-bar"></div>
+                <div class="skill-bar-percent">{{ i.proficiency }}%</div>
+            </div>
+            {% endfor %}
+
+
+        </div>
+        
+        
+        <!-- .title_content -->
+        <div class="title_content" style="float: none;">
+            <div class="text_content">My Resume</div>
+            <div class="clear"></div>
+        </div>
+        <!-- /.title_content -->
+        
+        <!-- .download_resume -->
+        <a class="download" style="margin:0;float: left;" href="#">
+            <span data-hover="Download My Resume"><i class="glyphicon glyphicon-download-alt"></i> Download My Resume</span>
+        </a>
+        <!-- /.download_resume -->
+
+    </div>
+     <!-- /.resume-right -->
+     
+     
+     
+     <!-- .resume-left -->
+    <div class="col-md-6 resume-left">    
+        <!-- .title_content -->
+        <div class="title_content" style="margin-bottom:5px">
+            <div class="text_content">工作经历</div>
+            <div class="clear"></div>
+        </div>
+        <!-- /.title_content -->
+        
+        <!-- .attributes -->
+        <ul class="attributes">
+            {%  for i  in exprience_list %}
+            <li class="first">
+                <h5>{{ i.name }}  <span class="duration"><i class="fa fa-calendar color"></i> {{ i.time }}</span></h5>
+                <h6><span class="fa fa-briefcase"></span> {{ i.company }}</h6>
+                <p>{{ i.content }}.</p>
+            </li>
+            {% endfor %}
+
+        </ul>
+        <!-- /.attributes -->
+        <br>
+        
+        <!-- .title_content -->
+        <div class="title_content">
+            <div class="text_content">教育经历</div>
+            <div class="clear"></div>
+        </div>
+        <!-- /.title_content -->
+        
+        <!-- .attributes -->
+        <ul class="attributes">
+            {% for  i  in  education_list %}
+            <li class="first">
+                <h5>{{ i.major}}  <span class="duration"><i class="fa fa-calendar color"></i>{{ i.time }}</span></h5>
+                <h6><span class="fa fa-book"></span> {{ i.school }}</h6>
+                <p>{{ i.content }}</p>
+            </li>
+           {% endfor %}
+        </ul>
+        <!-- /.attributes -->
+        <br>  
+        
+        
+          <!-- .title_content -->
+        <div class="title_content">
+            <div class="text_content">证书</div>
+            <div class="clear"></div>
+        </div>
+        <!-- /.title_content -->
+        
+        <!-- .attributes -->
+        <ul class="attributes">
+            {% for i  in  awards_list %}
+            <li class="first">
+                <h5{{ i.name }} <span class="duration"><i class="fa fa-calendar color"></i> {{ i.time }}</span></h5>
+                <h6><span class="fa fa-trophy"></span> {{ i.bodies }}</h6>
+                <p>{{ i.content }}.</p>
+            </li>
+            {% endfor %}
+
+  
+        </ul>
+        <!-- /.attributes -->
+        <br>  
+        
+    </div>
+    <!-- /.resume-left -->
+</div>
+
+  <div style="clear: both"></div>  
+  
+  
+<!-- client reference -->
+<div class="row">
+    <div class="col-md-12">   
+    
+
+ </div>
+     
+     
+     
+     
+     <div style="clear: both"></div>   
+</div>
+
+                                            </div>
+                                            <!-- End .resume -->
+
+                                            <!-- .portfolio -->
+                                            <div id="portfolio" class="content_2">
+                                                
+                                                <!-- .title -->
+                                                <h1 class="h-bloc">Portfolio - My Works</h1>
+
+                                                <!-- .container-portfolio -->
+                                                <div class="container-portfolio">
+
+                                                    <!-- #filters -->
+                                                    <ul id="filters" class="clearfix">
+                                                        <li><span class="filter active" data-filter="catWeb catGraphic catMotion logo">所有图片</span></li>
+                                                        <li><span class="filter" data-filter="catWeb">风景图片</span></li>
+                                                        <li><span class="filter" data-filter="catGraphic">人物图片</span></li>
+                                                        <li><span class="filter" data-filter="catMotion">跑车图片</span></li>
+                                                        <li><span class="filter" data-filter="logo">家人图片</span></li>
+                                                    </ul>
+                                                    <!-- /#filters -->
+                                    
+                                                    <!-- #portfoliolist -->
+                                                    <div id="portfoliolist">
+                                                     {% for i in family%}
+                                                        <!-- .portfolio -->
+                                                        <div class="portfolio logo" data-cat="logo">
+                                                            <!-- .portfolio-wrapper -->
+                                                            <div class="portfolio-wrapper">
+                                                                <a href="{{ i.img.url }}" rel="portfolio" title="{{ i.content }}">
+                                                                    <img src="{{  i.img.url }}" alt="Visual Infography" />
+                                                                    <div class="label">
+                                                                        <div class="label-text">
+                                                                            <a class="text-title">Project Name</a>
+                                                                            <span class="text-category">{{ i.name }}</span>
+                                                                        </div>
+                                                                        <div class="label-bg"></div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                            <!-- /.portfolio-wrapper -->
+                                                        </div>
+                                                        <!-- /.portfolio -->
+                                                        {% endfor %}
+
+                                                       {% for i in  fengjing %}
+
+                                                        <!-- .p ortfolio -->
+                                                        <div class="portfolio catWeb" data-cat="catWeb">
+                                                            <!-- .portfolio-wrapper -->
+                                                            <div class="portfolio-wrapper">
+                                                                <a href="{{ i.img.url  }}" rel="portfolio">
+
+                                                                    <img src="{{ i.img.url  }}" alt="Visual Infography" />
+                                                                    <div class="label">
+                                                                        <div class="label-text">
+                                                                            <a class="text-title">Project Name</a>
+                                                                            <span class="text-category">{{ i.name }}</span>
+                                                                        </div>
+                                                                        <div class="label-bg"></div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                            <!-- /.portfolio-wrapper -->
+                                                        </div>
+                                                        <!-- /.portfolio -->
+                                                        {% endfor %}
+                                                      {% for i in  car %}
+                                                        <!-- .portfolio -->
+                                                        <div class="portfolio catMotion" data-cat="catMotion">
+                                                            <!-- .portfolio-wrapper -->
+                                                            <div class="portfolio-wrapper">
+                                                                <a href="{{ i.img.url  }}" rel="portfolio">
+                                                                    <img src="{{ i.img.url  }}" alt="Sonor's Design" />
+                                                                    <div class="label">
+                                                                        <div class="label-text">
+                                                                            <a class="text-title">Project Name</a>
+                                                                            <span class="text-category">{{ i.name }}</span>
+                                                                        </div>
+                                                                        <div class="label-bg"></div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                            <!-- /.portfolio-wrapper -->
+                                                        </div>
+                                                    {% endfor %}
+                                                        <!-- /.portfolio -->
+                                                        {% for i  in renwu %}
+                                                        <!-- 人物照片模板-->
+                                                        <div class="portfolio catGraphic" data-cat="catGraphic">
+                                                            <!-- .portfolio-wrapper -->
+                                                            <div class="portfolio-wrapper">
+                                                                <a href="{{i.img.url   }}" rel="portfolio">
+                                                                    <img src="{{ i.img.url  }}" alt="Typography Company" />
+                                                                    <div class="label">
+                                                                        <div class="label-text">
+                                                                            <a class="text-title">人物</a>
+                                                                            <span class="text-category">{{ i.name }}</span>
+                                                                        </div>
+                                                                        <div class="label-bg"></div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                            <!-- /.portfolio-wrapper -->
+                                                        </div>
+                                                        <!-- /.portfolio -->
+                                                        {% endfor %}
+
+>
+
+
+                                                        <div class="clear"></div>
+
+                                                    </div>
+                                                    <!-- #portfoliolist -->
+                                                </div>
+                                                <!-- /.container-portfolio -->
+                                                                                       </div>
+                                            <!-- End .portfolio -->
+
+                                            <!-- .blog -->
+
+                                            <!-- End .blog -->
+
+                                            <!-- .contact -->
+                                            <div id="contact" class="content_2">
+                                                
+                                        <h1 class="h-bloc">Contact - Contact Me</h1>
+
+
+                                        <div class="row">
+
+                                            <div class="col-lg-12">
+                                                <div id="map"></div>
+                                            </div>  
+
+                                            <div class="col-lg-12">
+                                                <div class="row" id="contact-user">
+                                                    <div class="col-md-5">
+                                                        <div class="contact-info">
+                                                            <!--<h3 class="main-heading"><span>Contact info</span></h3>-->
+
+                                                            <div class="title_content" style="float: none;">
+                                                                <div class="text_content">Contact info</div>
+                                                                <div class="clear"></div>
+                                                            </div>
+
+                                                            <ul>
+                                                                <li><span class="span-info"><i class="glyphicon glyphicon-map-marker"></i> Adress:</span> 滁州学院.<br /><br /></li>
+                                                                <li><span class="span-info"><i class="glyphicon glyphicon-envelope"></i> Email:</span>1125679585@qq.com</li>
+                                                                <li><span class="span-info"><i class="glyphicon glyphicon-phone"></i> Phone:</span>15755083306</li>
+                                                           
+                                                            </ul>
+                                                        </div>
+                                                        <!-- /Contact Info -->
+                                                        <div class="clear"></div>
+
+                                                        <!--<h3 class="main-heading" style="margin-left: 22px;"><span>Follow me</span></h3>-->
+
+                                                        <div class="title_content tiltle_contacts" style="float: none;">
+                                                            <div class="text_content">Follow me</div>
+                                                            <div class="clear"></div>
+                                                        </div>
+
+                                                    
+
+                                                            <div id="profile_social">
+                                                                <a href="www.qq,com"><i class="fa fa-qq"></i></a>
+                                                                <a href="#"><i class="fa fa-weixin"></i></a>
+                                                                <a href="www.weibo.com"><i class="fa fa-weibo"></i></a>
+                                                                <a href="http://github.com"><i class="fa fa-github"></i></a>
+                                                           
+                                                                  <div class="clear"></div>
+                                                            </div>
+                                              
+
+
+                                                    </div>
+
+                                                    <div class="col-md-7">
+                                                        <!-- Contact Form -->
+                                                        <div class="title_content" style="float: none;">
+                                                            <div class="text_content">联系管理员</div>
+                                                            <div class="clear"></div>
+                                                        </div>
+
+                                                        <div class="contact-form">
+                                                            <!--<h3 class="main-heading"><span>Let's keep in touch</span></h3>-->
+
+
+
+                                                            <div id="contact-status"></div>
+
+                                                            <form  method="POST" >
+															   
+                                                                <p class="form-group" id="contact-name">
+                                                                    <label for="name">你的姓名</label>
+                                                                    <input type="text" name="name" />
+                                                                </p>
+                                                                <p class="form-group" id="contact-email"> 
+                                                                    <label for="email">你的邮箱地址</label>
+                                                                    <input type="text" name="email"  />
+                                                                </p>
+
+                                                                <p class="form-group" id="contact-message">
+                                                                    <label for="message">邮件内容</label>
+                                                                    <textarea name="message" cols="88" rows="6"></textarea>
+                                                                </p>
+                                                                <input type="reset" name="reset" value="CLEAR" class="reset">
+																<button type="submit" >点击提交</button>
+                                                               <!-- <input type="submit" name="submit" value="SEND MESSAGE" class="submit">
+
+                                                                <!-- <section class="button-demo" style="display: inline-block;">
+                                                                    <button class="ladda-button submit send_email" name="submit" data-color="green" data-style="expand-left">SEND MESSAGE</button>
+                                                                </section> -->
+
+                                                            </form>
+                                                        </div>
+                                                        <!-- /Contact Form -->
+                                                    </div>
+                                                </div>
+                                            </div>  
+
+
+
+                                        </div>                                            </div>
+                                            <!-- End .contact -->
+
+                                        </div>
+                                        <!-- End #resp-tabs-container --> 
+
+                                    </div><!-- End verticalTab -->
+
+                                </div><!-- End flexy_content -->
+
+
+                            </div><!-- End row -->
+
+                        </div><!-- End col-md-12 -->
+
+                    </div><!-- End row -->
+
+                </div><!-- End container -->
+
+            </section>
+            <!-- End Content -->
+
+        </div>
+        <!-- End wrapper -->
+
+        <!-- Switcher -->
+{#        侧边栏··············#}
+        <div id="custumize-style">
+            <h2>Style Selector<a href="#" class="switcher"><i class="fa fa-cogs icon-switcher"></i></a></h2>
+            <div>
+                <h3>Theme Color</h3>
+                <ul class="colors-style" id="color1">
+
+                    <li><a href="#" class="gray"></a></li>
+                    <li><a href="#" class="green"></a></li>
+                    <li><a href="#" class="blue"></a></li>
+                    <li><a href="#" class="red"></a></li>
+                    <li><a href="#" class="yellow"></a></li>
+
+                    <li><a href="#" class="DarkBlue"></a></li>
+                    <li><a href="#" class="orange"></a></li>
+                    <li><a href="#" class="rose"></a></li>
+                    <li><a href="#" class="blue"></a></li>
+                    <li><a href="#" class="darkolivegreen"></a></li>
+
+                </ul>
+            </div>
+            <div> 
+
+                <h3 class="layouts">Profile Image</h3>
+                <div id="show">
+
+                    <div class="clean-check">
+
+                        <input type="radio" id="r1" name="style_profile" value="style_profile_1" checked="checked" />
+                        <label for="r1"><span></span>Rotating image</label>
+
+                        <input type="radio" id="r2" name="style_profile" value="style_profile_2" />
+                        <label for="r2"><span></span>Fixed image</label>
+
+                    </div>
+                </div>
+
+
+                
+                <h3 class="layouts">Page Builder</h3>
+               
+
+                <h3 class="layouts">Page Animation</h3>
+                <div id="show">
+
+                    <select name="one" class="dropdown-select">
+                        <optgroup label="Bouncing Entrances">
+                            <option value="bounceIn" selected>bounceIn</option>
+                            <option value="bounceInDown">bounceInDown</option>
+                            <option value="bounceInLeft">bounceInLeft</option>
+                            <option value="bounceInRight">bounceInRight</option>
+                            <option value="bounceInUp">bounceInUp</option>
+                        </optgroup>
+
+                        <optgroup label="Fading Entrances">
+                            <option value="fadeIn">fadeIn</option>
+                            <option value="fadeInDown">fadeInDown</option>
+                            <option value="fadeInLeft">fadeInLeft</option>
+                            <option value="fadeInRight">fadeInRight</option>
+                            <option value="fadeInUp">fadeInUp</option>
+                        </optgroup>      
+                    </select>
+
+                </div>
+
+                <h3 class="layouts" style="padding-top:5px">Background Style</h3>
+                <div id="show">
+
+                    <div class="clean-check">
+
+						<input type="radio" id="s1" name="layout" value="bg_color" checked="checked" />
+                        <label for="s1"><span></span>Color</label>
+                        
+                        <input type="radio" id="s2" name="layout" value="bg_slider" />
+                        <label for="s2"><span></span>Slider</label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div> 
+                <h3>Background Color</h3>
+                <ul class="colors-style bgsolid" id="bgsolid">
+                    <li><a href="#" class="gray-bg"></a></li>
+                    <li><a href="#" class="green-bg"></a></li>
+                    <li><a href="#" class="blue-bg"></a></li>
+                    <li><a href="#" class="red-bg"></a></li>
+                    <li><a href="#" class="yellow-bg"></a></li>
+                </ul>
+            </div> 
+
+            <div>  
+                <h3>Background Image</h3>
+                <ul class="colors-style bg" id="bg">
+                    <li><a href="#" class="bg1"></a></li>
+                    <li><a href="#" class="bg2"></a></li>
+                    <li><a href="#" class="bg3"></a></li>
+                    <li><a href="#" class="bg4"></a></li>
+                    <li><a href="#" class="bg5"></a></li>
+                </ul>
+            </div>
+
+            <div id="button-reset"><a href="#" class="button color blue boxed">Reset</a></div>
+        </div>
+        <!-- End Switcher -->
+        <!-- End Switcher -->
+
+
+
+        <!-- jquery | jQuery 1.11.0 -->
+        <!-- Credits: http://jquery.com -->
+        <script type="text/javascript" src="/static/person/js/jquery.min.js"></script>
+
+        <!-- Js | jquery.cycle -->
+        <!-- Credits: https://github.com/malsup/cycle2 -->
+        <script type="text/javascript" src="/static/person/js/jquery.cycle2.min.js"></script>
+
+        <!-- Js | bootstrap -->
+        <!-- Credits: http://getbootstrap.com/ -->
+        <script type="text/javascript" src="/static/person/js/bootstrap.min.js"></script>
+
+        <!-- Js | easyResponsiveTabs -->
+        <!-- Credits: http://webtrendset.com/demo/easy-responsive-tabs/Index.html -->
+        <script type="text/javascript" src="/static/person/js/easyResponsiveTabs.min.js"></script>
+
+        <!-- Js | jquery.cookie -->
+        <!-- Credits: https://github.com/carhartl/jquery-cookie --> 
+        <script type="text/javascript" src="/static/person/js/jsSwitcher/jquery.cookie.js"></script>
+
+        <!-- Js | switcher -->
+        <!-- Credits: http://themeforest.net/user/FlexyCodes -->
+        <script type="text/javascript" src="/static/person/js/jsSwitcher/switcher.js"></script>
+
+        <!-- Js | mCustomScrollbar -->
+        <!-- Credits: http://manos.malihu.gr/jquery-custom-content-scroller -->
+        <script type="text/javascript" src="/static/person/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+        <!-- Js | gmaps -->
+        <!-- Credits: http://maps.google.com/maps/api/js?sensor=true-->
+        
+        <script type="text/javascript" src="/static/person/js/gmaps.min.js"></script>
+
+        <!-- Js | Js -->
+        <!-- Credits: http://themeforest.net/user/FlexyCodes -->
+        <script type="text/javascript" src="/static/person/js/main.js"></script>
+
+        <!-- jquery | rotate and portfolio -->
+        <!-- Credits: http://jquery.com -->
+        <script type="text/javascript" src="/static/person/js/jquery.mixitup.min.js"></script>
+        <script type="text/javascript" src="/static/person/js/HeadImage.js"></script>
+
+        <!-- jquery | prettyPhoto -->
+        <!-- Credits: http://www.no-margin-for-errors.com/ -->
+        <script type="text/javascript" src="/static/person/js/jquery.prettyPhoto.js"></script>
+
+
+        <!-- code js for image rotate -->
+        <script type="text/javascript">
+
+            var mouseX;
+            var mouseY;
+            var imageOne;
+
+            /* Calling the initialization function */
+            $(init);
+
+            /* The images need to re-initialize on load and on resize, or else the areas
+             * where each image is displayed will be wrong. */
+            $(window).load(init);
+            $(window).resize(init);
+
+            /* Setting the mousemove event caller */
+            $(window).mousemove(getMousePosition);
+
+            /* This function is called on document ready, on load and on resize
+             * and initiallizes all the images */
+            function init() {
+
+                /* Instanciate the mouse position variables */
+                mouseX = 0;
+                mouseY = 0;
+
+                /* Instanciate a HeadImage class for every image */
+                imageOne = new HeadImage("one");
+
+            }
+
+            /* This function is called on mouse move and gets the mouse position. 
+             * It also calls the HeadImage function to display the correct image*/
+            function getMousePosition(event) {
+
+                /* Setting the mouse position variables */
+                mouseX = event.pageX;
+                mouseY = event.pageY;
+
+                /*Calling the setImageDirection function of the HeadImage class
+                 * to display the correct image*/
+                imageOne.setImageDirection();
+
+            }
+
+        </script>
+
+
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </body>
+</html>

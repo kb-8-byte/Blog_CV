@@ -1,0 +1,277 @@
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    color: #484848;
+    font: 14px "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.main {
+    width: 25rem;
+    max-height: 15rem;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 20%;
+    right: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+a:hover {
+    color: #565A5F;
+}
+
+@-moz-keyframes bg {
+    0% {
+        -moz-transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        -moz-transform: translate3d(-32400px, 0, 0);
+        -webkit-transform: translate3d(-32400px, 0, 0);
+        -o-transform: translate3d(-32400px, 0, 0);
+        -ms-transform: translate3d(-32400px, 0, 0);
+        transform: translate3d(-32400px, 0, 0);
+    }
+}
+
+@-webkit-keyframes bg {
+    0% {
+        -moz-transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        -moz-transform: translate3d(-32400px, 0, 0);
+        -webkit-transform: translate3d(-32400px, 0, 0);
+        -o-transform: translate3d(-32400px, 0, 0);
+        -ms-transform: translate3d(-32400px, 0, 0);
+        transform: translate3d(-32400px, 0, 0);
+    }
+}
+
+@-o-keyframes bg {
+    0% {
+        -moz-transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        -moz-transform: translate3d(-32400px, 0, 0);
+        -webkit-transform: translate3d(-32400px, 0, 0);
+        -o-transform: translate3d(-32400px, 0, 0);
+        -ms-transform: translate3d(-32400px, 0, 0);
+        transform: translate3d(-32400px, 0, 0);
+    }
+}
+
+@-ms-keyframes bg {
+    0% {
+        -moz-transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        -moz-transform: translate3d(-32400px, 0, 0);
+        -webkit-transform: translate3d(-32400px, 0, 0);
+        -o-transform: translate3d(-32400px, 0, 0);
+        -ms-transform: translate3d(-32400px, 0, 0);
+        transform: translate3d(-32400px, 0, 0);
+    }
+}
+
+@keyframes bg {
+    0% {
+        -moz-transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        -moz-transform: translate3d(-32400px, 0, 0);
+        -webkit-transform: translate3d(-32400px, 0, 0);
+        -o-transform: translate3d(-32400px, 0, 0);
+        -ms-transform: translate3d(-32400px, 0, 0);
+        transform: translate3d(-32400px, 0, 0);
+    }
+}
+
+#bg {
+    background-size: auto 100%;
+    width: 51200px;
+    height: 100%;
+    -moz-animation: bg 1800s linear infinite;
+    -webkit-animation: bg 1800s linear infinite;
+    -o-animation: bg 1800s linear infinite;
+    animation: bg 1800s linear infinite;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    background-color: #000;
+    background-image: url("../images/ansheng-homepage-bg.jpg");
+    /*背景图作者 NOEYEBROW. */
+    background-position: center left;
+    background-repeat: repeat-x;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    opacity: 1;
+}
+
+.profile {
+    text-align: center;
+    background-color: #fff;
+    opacity: 0.8;
+}
+
+.profile-image {
+    width: 100%;
+    height: 0;
+    background-size: cover;
+    background-color: #2c3e50;
+    border-top: 90px solid #2c3e50;
+    opacity: 0;
+}
+
+.profile-inner {
+    padding: 0 10px 10px;
+}
+
+.profile-logo img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    margin-top: -50px;
+    border-radius: 50%;
+    border: 0 solid #fff;
+    opacity: 0.5;
+}
+
+.profile-title {
+    font-size: 120%;
+    line-height: 1;
+    margin: 16px 0 12px 0;
+}
+
+.profile-description {
+    line-height: 1.2;
+}
+
+.links {
+    margin: 20px 0 10px;
+}
+
+.links a {
+    margin: 0 5px;
+    font-size: 15px;
+}
+
+#footer {
+    text-align: center;
+    color: #cccccc;
+    font-size: 1em;
+    padding-top: 1em;
+    opacity: 0.5;
+}
+
+#footer a {
+    color: #cccccc;
+}
+
+#footer a:hover {
+    color: #cccccc;
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .main {
+        width: 25rem;
+    }
+
+    #bg {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: #12b1ea;
+        background: -moz-linear-gradient(45deg, #12b1ea 0%, #299a0b 100%);
+        background: -webkit-linear-gradient(45deg, #12b1ea 0%, #299a0b 100%);
+        background: linear-gradient(45deg, #12b1ea 0%, #299a0b 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#12b1ea', endColorstr='#299a0b', GradientType=1);
+    }
+
+    @keyframes bg {
+    }
+    @-moz-keyframes bg {
+    }
+    @-webkit-keyframes bg {
+    }
+    @-o-keyframes bg {
+    }
+    @-ms-keyframes bg {
+    }
+}
+
+@media (max-width: 479px) {
+    .main {
+        width: 98%;
+    }
+
+    #bg {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: #12b1ea;
+        background: -moz-linear-gradient(45deg, #12b1ea 0%, #299a0b 100%);
+        background: -webkit-linear-gradient(45deg, #12b1ea 0%, #299a0b 100%);
+        background: linear-gradient(45deg, #12b1ea 0%, #299a0b 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#12b1ea', endColorstr='#299a0b', GradientType=1);
+    }
+
+    @keyframes bg {
+    }
+    @-moz-keyframes bg {
+    }
+    @-webkit-keyframes bg {
+    }
+    @-o-keyframes bg {
+    }
+    @-ms-keyframes bg {
+    }
+}
