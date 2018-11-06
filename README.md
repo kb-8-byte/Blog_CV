@@ -56,7 +56,7 @@
 ## 项目截图
 
 ![首页](./static/images/desc1.png)
-![博客](./static/images/desc7.png)
+![博客](./static/images/desc2.png)
 ![个人空间](./static/images/desc6.png)
 ![后台](./static/images/desc8.png)
 
