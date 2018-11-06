@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="360" src="assets/images/logo-v2.png" alt="weapp" />
+  <img width="360" src="assets/images/desc1.png" alt="weapp" />
   <br>
 
   <a href="javascript:;"><img src="https://img.shields.io/badge/Python-brightgreen.svg" /></a>
@@ -22,24 +22,6 @@
 ## 项目预览
 ![操作截图](./static/images/test.gif)
 
-## 目录结构
-```
-├─assets ---------- 静态资源文件
-│  ├─images ---------- 公共图片
-│  └─js -------------- 公共的JS
-│     └─common ---------- 公共方法函数封装
-├─components ------ 自定义组件和第三方组件
-│  ├─libs ------------ 第三方库
-│  └─weapp ----------- weapp组件
-├─pages ----------- 页面目录
-│  ├─index ----------- 首页
-│  ├─libs ------------ 第三方库页面
-│  └─weapp ----------- weapp组件页面
-├─app.js
-├─app.json
-├─app.wxss
-└─README.md
-```
 
 
 ## 主要特点
@@ -56,8 +38,8 @@
 ## 项目截图
 
 ![首页](./static/images/desc1.png)
-![博客](./static/images/desc2.png)
-![个人空间](./static/images/desc6.png)
+![个人空间](./static/images/desc2.png)
+![博客](./static/images/desc7.png)
 ![后台](./static/images/desc8.png)
 
 
