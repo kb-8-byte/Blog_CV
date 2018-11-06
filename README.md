@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="360" src="assets/images/desc1.png" alt="weapp" />
+  <img width="360" src="assets/images/desc1.png" alt="个人博客" />
   <br>
 
   <a href="javascript:;"><img src="https://img.shields.io/badge/Python-brightgreen.svg" /></a>
@@ -24,12 +24,7 @@
 
 
 
-## 主要特点
-* 组件调用简单
-* 组件化编程开发，可配置、可扩展、可复用
-* 使用ES6代码特性
-* 小程序API的二次封装，如转发分享
-* 公共方法的封装，如URL参数转换
+
 
 ## 需要改进
 * 文章的排版，支持markdown语法高亮
