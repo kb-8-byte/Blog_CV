@@ -32,9 +32,14 @@
 
 ## 项目截图
 
+### 首页导航栏
 ![首页](./static/images/1.jpg)
+### 个人空间
 ![个人空间](./static/images/3.jpg)
+###  博客详情
 ![博客](./static/images/2.jpg)
+
+### 后台
 ![后台](./static/images/desc8.png)
 
 
