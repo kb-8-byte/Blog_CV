@@ -32,9 +32,9 @@
 
 ## 项目截图
 
-![首页](./static/images/desc1.png)
-![个人空间](./static/images/desc2.png)
-![博客](./static/images/desc7.png)
+![首页](./static/images/1.jpg)
+![个人空间](./static/images/3.jpg)
+![博客](./static/images/2.jpg)
 ![后台](./static/images/desc8.png)
 
 
